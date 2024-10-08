@@ -2,17 +2,12 @@ import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { DotLottieReact } from '@lottiefiles/dotlottie-react';
 import { Helmet } from "react-helmet";
-import { dataFeatures } from './dataFeatures';
+import { dataFeatures } from './../assets/dataFeatures';
+import ComMailchimp from './comMailchimp';
 
 
 const Home = () => {
 	const [dotLottie, setDotLottie] = React.useState(null);
-	const [inputValue, setInputValue] = React.useState('');
-
-	const handleSubmit = (e) => {
-		e.preventDefault();
-		alert('Form submitted with value: ' + inputValue);
-	};
 
 	return <>
 		<Helmet>
@@ -34,25 +29,7 @@ const Home = () => {
 					<p className="fw-light mt-2 fs-5">
 						Featuring Advanced Voice Interaction Capabilities
 					</p>
-					<form
-						onSubmit={handleSubmit}
-						className="mt-4 d-flex justify-content-center justify-content-xl-start mx-auto mx-xl-0 m-0 p-2 rounded-pill border border-1"
-						style={{ maxWidth: '500px' }}
-					>
-						<input
-							type="text"
-							value={inputValue}
-							onChange={(e) => setInputValue(e.target.value)}
-							placeholder="Work email"
-							className="form-control border-0 px-4 shadow-none rounded-end rounded-5"
-						/>
-						<button
-							type="submit"
-							className="btn btn-success border-0 px-4 py-3 text-nowrap rounded-start rounded-5"
-						>
-							Get free access
-						</button>
-					</form>
+					<ComMailchimp />
 				</div >
 				<div className="col-12 col-xl-6 order-xl-2 order-1">
 					<DotLottieReact
