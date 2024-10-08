@@ -14,7 +14,7 @@ const Home = () => {
 			<title>Hesab System - AI Accounting & Inventory System with Advanced Voice Interaction Capabilities</title>
 			<meta name="description" content="Next-generation AI-powered Accounting & Inventory System featuring Advanced Voice Interaction Capabilities" />
 		</Helmet>
-		<section className="container font-roboto ">
+		<section id="about" className="container font-roboto">
 			<div className="row flex-grow-1 d-flex mb-5">
 				<div className="col-12 col-xl-6 order-xl-1 order-2 text-center text-xl-start px-4">
 					<h2 className="fw-bolder text-dark mt-5"
@@ -45,7 +45,7 @@ const Home = () => {
 				</div>
 			</div>
 
-			<div className="row justify-content-center text-center my-5 py-5">
+			<div id="services" className="row justify-content-center text-center my-5 py-5">
 				<div className="col-12 mb-4 mt-5">
 					<h3 className="fw-bolder text-dark">Key Features</h3>
 					<p className="fw-light mt-2 fs-5">
