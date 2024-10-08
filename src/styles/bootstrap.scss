@@ -1,0 +1,35 @@
+$bootstrap-colors: (
+    primary: var(--bs-primary),
+    danger: var(--bs-danger),
+    success: var(--bs-success),
+    warning: var(--bs-warning),
+    info: var(--bs-info),
+    dark: var(--bs-dark),
+    light: var(--bs-light),
+    secondary: var(--bs-secondary)
+);
+
+// hover:text-*
+@mixin hover-text($color) { 
+    &:hover { 
+        color: $color !important; 
+    } 
+} 
+@each $name, $color in $bootstrap-colors { 
+    .hover\:text-#{$name} { 
+        @include hover-text($color); 
+    } 
+}
+
+
+// hover:bg-*
+@mixin hover-bg($color) {
+    &:hover { 
+        background-color: $color !important;
+    }
+}
+@each $name, $color in $bootstrap-colors {
+    .hover\:bg-#{$name} { 
+        @include hover-bg($color);
+    }
+}
