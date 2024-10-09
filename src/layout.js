@@ -22,8 +22,8 @@ const Layout = ({ children }) => {
     const footerSocialLinks = [
         { name: "Instagram", url: "https://instagram.com/hesabsystem", icon: "fab fa-instagram" },
         { name: "Twitter", url: "https://twitter.com/hesabsystem", icon: "fab fa-twitter" },
-        { name: "LinkedIn", url: "https://linkedin.com/hesabsystem", icon: "fab fa-linkedin" },
-        { name: "Facebook", url: "https://facebook.com/hesabsystem", icon: "fab fa-facebook" },
+        { name: "LinkedIn", url: "https://www.linkedin.com/company/hesabsystem/", icon: "fab fa-linkedin" },
+        { name: "Facebook", url: "https://www.facebook.com/hesabsys", icon: "fab fa-facebook" },
     ];
     const footerContactLinks = [
         { name: "Email", url: "mailto:info@hesabsystem.com", label: "info@hesabsystem.com", icon: "far fa-envelope" },
