@@ -20,10 +20,10 @@ const Layout = ({ children }) => {
         { target: "_blank", name: "Join Us", path: "https://eepurl.com/i0YRnE" },
     ];
     const footerSocialLinks = [
-        { name: "Instagram", url: "https://instagram.com/hesaabsystem", icon: "fab fa-instagram" },
-        { name: "Twitter", url: "https://twitter.com/hesaabsystem", icon: "fab fa-twitter" },
-        { name: "LinkedIn", url: "https://linkedin.com/hesaabsystem", icon: "fab fa-linkedin" },
-        { name: "Facebook", url: "https://facebook.com/hesaabsystem", icon: "fab fa-facebook" },
+        { name: "Instagram", url: "https://instagram.com/hesabsystem", icon: "fab fa-instagram" },
+        { name: "Twitter", url: "https://twitter.com/hesabsystem", icon: "fab fa-twitter" },
+        { name: "LinkedIn", url: "https://linkedin.com/hesabsystem", icon: "fab fa-linkedin" },
+        { name: "Facebook", url: "https://facebook.com/hesabsystem", icon: "fab fa-facebook" },
     ];
     const footerContactLinks = [
         { name: "Email", url: "mailto:info@hesabsystem.com", label: "info@hesabsystem.com", icon: "far fa-envelope" },
