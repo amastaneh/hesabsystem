@@ -106,7 +106,7 @@ const Layout = ({ children }) => {
                             Hesab System is a cutting-edge, AI-powered Accounting and Inventory Management solution designed to transform business operations with its advanced voice interaction capabilities. It provides seamless integration of intelligent automation to manage financial data, track inventory, and generate insightful reports, all through a user-friendly interface that supports natural language voice commands.
                         </p>
                     </div>
-                    <div className="col-4 col-xl-2">
+                    <div className="col-12 col-xl-2">
                         <h2 className="fs-5 fw-semibold my-2">Important Links</h2>
                         <ul className="list-unstyled mt-3">
                             {footerMenuItems.map((item, index) => (
@@ -125,7 +125,7 @@ const Layout = ({ children }) => {
                             ))}
                         </ul>
                     </div>
-                    <div className="col-4 col-xl-2">
+                    <div className="col-12 col-xl-2">
                         <h2 className="fs-5 fw-semibold my-2">Follow Us</h2>
                         <ul className="list-unstyled mt-3">
                             {footerSocialLinks.map((item, index) => (
@@ -144,7 +144,7 @@ const Layout = ({ children }) => {
                             ))}
                         </ul>
                     </div>
-                    <div className="col-4 col-xl-2">
+                    <div className="col-12 col-xl-2">
                         <h2 className="fs-5 fw-semibold my-2">Contact Us</h2>
                         <ul className="list-unstyled mt-3">
                             {footerContactLinks.map((item, index) => (
