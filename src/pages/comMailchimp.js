@@ -2,6 +2,7 @@ import React from 'react';
 
 const ComMailchimp = () => {
     const [inputValue, setInputValue] = React.useState('');
+    const isMobile = window.innerWidth < 1200;
 
     return <div id="mc_embed_shell">
         <div id="mc_embed_signup">
@@ -17,8 +18,7 @@ const ComMailchimp = () => {
                 <div
                     id="mc_embed_signup_scroll"
                     className='mt-4 d-flex justify-content-center justify-content-xl-start mx-auto mx-xl-0 m-0 p-2 rounded-pill border border-1'
-                    style={{ width: '500px' }}
-                    width="500px"
+                    width={isMobile ? '400px' : '500px'}
                 >
                     <div className="mc-field-group w-100">
                         <label className="d-none" htmlFor="mce-EMAIL">Email Address <span className="asterisk">*</span></label>
@@ -60,7 +60,7 @@ const ComMailchimp = () => {
                                 value="Get free access"
                             />
                             <p className='d-none'>
-                                <a href="http://eepurl.com/i0YSFQ" title="Mailchimp - email marketing made easy and fun">
+                                <a href="http://eepurl.com/i0YSFQ">
                                     <span>
                                         <img className="refferal_badge" src="https://digitalasset.intuit.com/render/content/dam/intuit/mc-fe/en_us/images/intuit-mc-rewards-text-dark.svg" alt="Intuit Mailchimp" />
                                     </span>

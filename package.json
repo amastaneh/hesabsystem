@@ -1,6 +1,6 @@
 {
 	"name": "hesabsystem",
-	"version": "1.0.32",
+	"version": "1.0.33",
 	"homepage": "https://hesabsystem.com",
 	"private": true,
 	"dependencies": {

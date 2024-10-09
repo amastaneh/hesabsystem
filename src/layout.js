@@ -1,10 +1,12 @@
 import React from 'react';
 import packageJson from '../package.json';
 import { useLocation } from 'react-router-dom';
+import NavbarToggler from './pages/comNavbarToggler';
 
 
 const Layout = ({ children }) => {
     const location = useLocation();
+    const isMobile = window.innerWidth < 1200;
     const currentPath = location.pathname + location.hash;
     const menuItems = [
         { name: "Home", path: "/" },
@@ -12,10 +14,10 @@ const Layout = ({ children }) => {
         { name: "Contact", path: "#contact" },
     ];
     const footerMenuItems = [
-        { name: "Home", path: "/" },
-        { name: "Services", path: "#services" },
-        { name: "Contact", path: "#contact" },
-        { name: "Join Us", path: "http://eepurl.com/i0YRnE" },
+        { target: "_self", name: "Home", path: "/" },
+        { target: "_self", name: "Services", path: "#services" },
+        { target: "_self", name: "Contact", path: "#contact" },
+        { target: "_blank", name: "Join Us", path: "https://eepurl.com/i0YRnE" },
     ];
     const footerSocialLinks = [
         { name: "Instagram", url: "https://instagram.com/hesaabsystem", icon: "fab fa-instagram" },
@@ -25,42 +27,41 @@ const Layout = ({ children }) => {
     ];
     const footerContactLinks = [
         { name: "Email", url: "mailto:info@hesabsystem.com", label: "info@hesabsystem.com", icon: "far fa-envelope" },
-        { name: "Phone", url: "tel:+1.3473380789", label: "(347) 338-0789", img: "/images/flag-us.svg" },
-        { name: "Phone", url: "tel:+1.4164603070", label: "(416) 460-3070", img: "/images/flag-ca.svg" },
+        { name: "Canada Phone", url: "tel:+1.4164603070", label: "(416) 460-3070", img: "/images/flag-ca.svg" },
+        { name: "US Phone", url: "tel:+1.3473380789", label: "(347) 338-0789", img: "/images/flag-us.svg" },
     ]
 
 
     return <>
         {/* Header */}
-        <header id="home" className="container-fluid font-roboto border-bottom border-light border-1 m-0 p-0">
+        <header
+            id="home"
+            className="container-fluid font-roboto border-bottom border-light border-1 m-0 p-0"
+            style={{ zoom: isMobile ? 0.9 : 1 }}
+        >
             <div className="container">
                 <nav className="navbar navbar-expand-xl navbar-light p-0 fs-6 fw-normal pb-4 pb-xl-0">
                     {/* Header/Logo */}
-                    <a className="navbar-brand p-0 d-flex align-items-center text-dark text-decoration-none" href="/">
+                    <a
+                        className="navbar-brand p-0 d-flex align-items-center text-dark text-decoration-none"
+                        href="/"
+                        title="Hesab System"
+                        aria-label="Hesab System"
+                    >
                         <img
                             src="/images/hesab-system-logo-512.png"
                             alt="Hesab System Logo"
                             className="mr-2"
-                            width="128"
-                            height="96"
+                            width="128px"
+                            height="96px"
                             style={{ objectFit: 'cover' }}
                         />
-                        <h1 className="text-dark fs-1 fw-semibold">Hesab System</h1>
+                        <h1 className="text-dark fs-1 pt-1 fw-semibold">Hesab System</h1>
                     </a>
+
+
                     {/* Header/Mobile Toggler */}
-                    <button
-                        className="navbar-toggler"
-                        type="button"
-                        aria-controls="navbarNav"
-                        aria-expanded="false"
-                        aria-label="Toggle navigation"
-                        onClick={(e) => {
-                            const navbarNav = document.getElementById("navbarNav");
-                            navbarNav.classList.toggle("show");
-                        }}
-                    >
-                        <span className="navbar-toggler-icon"></span>
-                    </button>
+                    <NavbarToggler className="navbar-toggler me-4" />
 
                     {/* Header/Navbar links */}
                     <div className="collapse navbar-collapse justify-content-end ps-3" id="navbarNav">
@@ -69,8 +70,9 @@ const Layout = ({ children }) => {
                                 <li key={index} className="nav-item me-3">
                                     <a
                                         className={`nav-link ${currentPath.includes(item.path) ? "text-dark" : "text-secondary"} hover:text-dark`}
-                                        //className="nav-link"
                                         href={item.path}
+                                        title={item.name}
+                                        aria-label={item.name}
                                     >
                                         {item.name}
                                     </a>
@@ -81,9 +83,10 @@ const Layout = ({ children }) => {
 
                         <a
                             className="btn btn-dark mt-3 mt-xl-0"
-                            href="http://eepurl.com/i0YRnE"
+                            href="https://eepurl.com/i0YRnE"
                             target="_blank"
                             rel="noreferrer"
+                            aria-label="Join Us"
                         >Join Us</a>
                     </div>
                 </nav>
@@ -111,6 +114,10 @@ const Layout = ({ children }) => {
                                     <a
                                         className="text-secondary hover:text-light text-decoration-none mb-2 d-block"
                                         href={item.path}
+                                        target={item.target}
+                                        rel={item.target === "_blank" ? "noreferrer" : undefined}
+                                        title={item.name}
+                                        aria-label={item.name}
                                     >
                                         {item.name}
                                     </a>
@@ -126,9 +133,10 @@ const Layout = ({ children }) => {
                                     <a
                                         className="text-secondary hover:text-light text-decoration-none mb-2 d-block"
                                         href={item.url}
-                                        aria-label={item.name}
                                         target="_blank"
                                         rel="noreferrer"
+                                        title={"Hesab System " + item.name}
+                                        aria-label={"Hesab System " + item.name}
                                     >
                                         <i className={`${item.icon} me-2`}></i>{item.name}
                                     </a>
@@ -144,6 +152,8 @@ const Layout = ({ children }) => {
                                     <a
                                         className="text-secondary hover:text-light text-decoration-none mb-2 d-block no-wrap"
                                         href={item.url}
+                                        title={"Hesab System " + item.name}
+                                        aria-label={"Hesab System " + item.name}
                                     >
                                         {item.icon && <i className={item.icon}></i>}
                                         {item.img && <img
